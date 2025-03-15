@@ -16,6 +16,6 @@ def run_publisher(interval=5):
             order_id_counter += 1
             time.sleep(interval)
     except KeyboardInterrupt:
-        logger.info("publiher stopped")
+        logger.info("publisher stopped")
     finally:
         broker.close_connection()

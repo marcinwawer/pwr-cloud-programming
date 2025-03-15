@@ -10,7 +10,7 @@ class MessageBroker:
             )
 
             self.channel = self.connection.channel()
-            logger.info("connected to rabbitmq (consumer 1)")
+            logger.info("connected to rabbitmq (consumer 2)")
         except Exception as e:
             logger.error(f"conection error: {e}")
             sys.exit(1)
@@ -39,4 +39,4 @@ class MessageBroker:
 
     def close_connection(self):
         self.connection.close()
-        logger.info("connection closed (consumer 1).")
+        logger.info("connection closed (consumer 2).")

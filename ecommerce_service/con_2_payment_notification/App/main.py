@@ -1,5 +1,5 @@
 import logging
-from pub_1_order_placed.App.publisher import run_publisher
+from con_2_payment_notification.App.consumer import run_consumer
 
 def configure_logger():
     logging.basicConfig(
@@ -9,4 +9,4 @@ def configure_logger():
 
 if __name__ == "__main__":
     configure_logger()
-    run_publisher(interval=5)
+    run_consumer()
