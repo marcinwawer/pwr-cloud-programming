@@ -1,9 +1,9 @@
 from datetime import date
 
 class ShipmentDeliveredEvent:
-    def __init__(self, shipment_id: int, delivered_date: date):
+    def __init__(self, shipment_id: int, delivery_date: date):
         self.shipment_id = shipment_id
-        self.delivered_date = delivered_date
+        self.delivery_date = delivery_date
 
     def __str__(self):
-        return f"{self.shipment_id}|{self.delivered_date}"
+        return f"{self.shipment_id}|{self.delivery_date}"

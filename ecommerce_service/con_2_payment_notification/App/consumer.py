@@ -4,7 +4,7 @@ from con_2_payment_notification.App.message_broker import MessageBroker
 
 logger = logging.getLogger(__name__)
 
-def process_order_placed(message_str: str):
+def process_payment(message_str: str):
     parts = message_str.split("|")
     if len(parts) == 2:
         payment_id, amount = parts
@@ -17,6 +17,6 @@ def run_consumer():
     broker = MessageBroker()
 
     def callback(msg_str: str):
-        process_order_placed(msg_str)
+        process_payment(msg_str)
 
     broker.consume_event(PaymentProcessedEvent, callback)

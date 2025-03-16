@@ -51,7 +51,7 @@ class MessageBroker:
 
         logger.info(
             f"event published: {queue_name}, "
-            f"shipment_id={event.shipment_id}, delivered_date={event.delivered_date}"
+            f"shipment_id={event.shipment_id}, delivery_date={event.delivery_date}"
         )
 
     def close_connection(self):
