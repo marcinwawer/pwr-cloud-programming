@@ -10,7 +10,7 @@ class MessageBroker:
             )
 
             self.channel = self.connection.channel()
-            logger.info("connected to rabbitmq (consumer 3)")
+            logger.info("connected to rabbitmq (consumer 4)")
         except Exception as e:
             logger.error(f"conection error: {e}")
             sys.exit(1)
@@ -36,24 +36,7 @@ class MessageBroker:
             self.channel.stop_consuming()
         finally:
             self.close_connection()
-    
-    def publish_event(self, event):
-        queue_name = type(event).__name__
-        self.channel.queue_declare(queue=queue_name)
-
-        body = str(event)
-
-        self.channel.basic_publish(
-            exchange='',
-            routing_key=queue_name,
-            body=body.encode('utf-8')
-        )
-
-        logger.info(
-            f"event published: {queue_name}, "
-            f"shipment_id={event.shipment_id}, delivered_date={event.delivered_date}"
-        )
 
     def close_connection(self):
         self.connection.close()
-        logger.info("connection closed (consumer 3).")
+        logger.info("connection closed (consumer 4).")
