@@ -1,4 +1,4 @@
-import time, logging
+import time, logging, random
 from pub_1_order_placed.Domain.Events.OrderPlacedEvent import OrderPlacedEvent
 from pub_1_order_placed.App.message_broker import MessageBroker
 
@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 
 def run_publisher(interval=5):
     broker = MessageBroker()
-    order_id_counter = 1  
+    order_id_counter = random.randint(0, 1000)
 
     try:
         while True:

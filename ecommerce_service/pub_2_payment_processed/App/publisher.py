@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 
 def run_publisher():
     broker = MessageBroker()
-    payment_id_counter = 11
+    payment_id_counter = random.randint(0, 1000)
 
     try:
         while True:

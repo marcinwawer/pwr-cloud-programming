@@ -12,7 +12,7 @@ def random_date(start: date, end: date) -> date:
 
 def run_publisher():
     broker = MessageBroker()
-    shipment_id_counter = 111
+    shipment_id_counter = random.randint(0, 1000)
     start_date = date(2025, 1, 1)
     end_date = date(2025, 12, 31)
 
